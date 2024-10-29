@@ -1,0 +1,52 @@
+.country-navigation {
+  padding: 0 7rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5rem;
+}
+
+.country-navigation > input {
+  border: none;
+  padding: 1.2rem 14rem 1.2rem 1.2rem;
+  box-shadow: 4px 12px 18px -7px #888888;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 20px;
+  outline: none;
+  align-self: flex-start;
+  border-radius: 10px;
+}
+
+.regions {
+  list-style-type: none;
+  cursor: pointer;
+  background-color: white;
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 14px;
+  line-height: 2rem;
+  position: absolute;
+  padding: 2rem 9rem 2rem 1.5rem;
+}
+
+.filter {
+  font-size: 1.4rem;
+  line-height: 2rem;
+  color: #111517;
+  background-color: white;
+  padding: 1rem 4rem 1rem 2rem;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.region.active {
+  font-weight: 800;
+}
+
+.country-navigation > input.dark-mode {
+  box-shadow: none;
+}

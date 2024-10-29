@@ -1,0 +1,36 @@
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem 8rem;
+  background-color: white;
+  margin-bottom: 5rem;
+}
+
+h1 {
+  font-size: 2.4rem;
+  font-weight: 800;
+  line-height: 3.274rem;
+  color: #111517;
+}
+
+.switch-mode {
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 2.182rem;
+  color: #111517;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+.top-header.dark-mode {
+  background-color: hsl(209, 23%, 22%);
+}
+
+.top-header.dark-mode h1,
+.top-header.dark-mode button {
+  color: white;
+}
+

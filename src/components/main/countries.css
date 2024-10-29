@@ -1,0 +1,94 @@
+.countries-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  gap: 3rem;
+}
+
+.countries-container img {
+  width: 264px;
+  height: 183px;
+}
+
+.country-information {
+  width: 264px;
+  height: 150px;
+  background-color: white;
+  padding: 2.4rem 9rem 4.5rem 2.4rem;
+  border-bottom-right-radius: 7px;
+  border-bottom-left-radius: 7px;
+  margin-top: -0.5rem;
+}
+
+.country ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.country {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  line-height: 2.6rem;
+  color: #111517;
+  margin-bottom: 1.6rem;
+}
+
+li {
+  font-size: 1.4rem;
+  font-weight: 300;
+  line-height: 1.6rem;
+  list-style-type: none;
+}
+
+.info {
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1.6rem;
+}
+
+footer {
+  margin: 5rem auto;
+}
+
+.footer-navigation ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+li a {
+  text-decoration: none;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+.footer-navigation ul li {
+  background-color: skyblue;
+  padding: 1rem;
+  border: 1px solid gray;
+  cursor: pointer;
+}
+
+a {
+  color: white;
+}
+
+.footer-navigation ul li:hover,
+.footer-navigation ul li:active {
+  background-color: rgb(99, 151, 172);
+}
+
+.onPage.active {
+  background-color: rgb(99, 151, 172);
+}
+
+.country-information.dark-mode {
+  background-color: hsl(209, 23%, 22%);
+  color: white;
+}
+
+.country.dark-mode {
+  color: white;
+}
