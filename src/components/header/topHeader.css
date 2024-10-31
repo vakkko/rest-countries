@@ -5,6 +5,7 @@
   padding: 3rem 8rem;
   background-color: white;
   margin-bottom: 5rem;
+  width: 100%;
 }
 
 h1 {
@@ -25,12 +26,12 @@ h1 {
   font-family: "Nunito Sans", sans-serif;
 }
 
-.top-header.dark-mode {
+.dark-mode .top-header {
   background-color: hsl(209, 23%, 22%);
-}
-
-.top-header.dark-mode h1,
-.top-header.dark-mode button {
   color: white;
 }
 
+.dark-mode .top-header h1,
+.dark-mode .top-header button {
+  color: white;
+}

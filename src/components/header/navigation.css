@@ -47,6 +47,18 @@
   font-weight: 800;
 }
 
-.country-navigation > input.dark-mode {
+.dark-mode .country-navigation > input {
   box-shadow: none;
+}
+
+@media screen and (max-width: 41.125rem) {
+  .country-navigation {
+    flex-direction: column;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  .country-navigation {
+    padding: 0 2rem;
+  }
 }

@@ -1,0 +1,40 @@
+.country-information {
+  width: 264px;
+  height: 150px;
+  background-color: white;
+  padding: 2.4rem 9rem 4.5rem 2.4rem;
+  border-bottom-right-radius: 7px;
+  border-bottom-left-radius: 7px;
+  margin-top: -0.5rem;
+}
+
+.country ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.country {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  line-height: 2.6rem;
+  color: #111517;
+  margin-bottom: 1.6rem;
+}
+
+.info {
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1.6rem;
+}
+
+.dark-mode .country-information {
+  background-color: hsl(209, 23%, 22%);
+  color: white;
+}
+
+.dark-mode .country-information .country {
+  color: white;
+}

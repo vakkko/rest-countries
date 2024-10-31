@@ -1,6 +1,5 @@
 import "./App.css";
-import Navigation from "./components/header/Navigation";
-import TopHeader from "./components/header/TopHeader";
+import Header from "./components/header/HeaderContent";
 import Countries from "./components/main/Countries";
 import { useState } from "react";
 
@@ -10,8 +9,7 @@ function App() {
   const [searchCountry, setSearchCountry] = useState("");
   return (
     <>
-      <TopHeader />
-      <Navigation
+      <Header
         selectedRegion={selectedRegion}
         searchCountry={searchCountry}
         setSearchCountry={setSearchCountry}

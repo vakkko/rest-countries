@@ -57,11 +57,11 @@ const Countries = ({ selectedRegion, searchCountry }) => {
 
   return (
     <>
-      <div className="countries-container">
+      <main className="countries-container">
         {currentCountries.map((country, index) => (
           <FetchCountries key={index} reg={country} i={index} />
         ))}
-      </div>
+      </main>
       <footer>
         <nav className="footer-navigation">
           <ul>

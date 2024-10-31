@@ -11,6 +11,7 @@ export default function Navigation({
 
   const handleRegionClick = (region) => {
     setSelectedRegion(region);
+    setShowContinents(!showContinents);
   };
 
   const handleInputChange = (event) => {
