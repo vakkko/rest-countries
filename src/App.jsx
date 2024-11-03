@@ -1,10 +1,9 @@
 import "./App.css";
-import Header from "./components/header/HeaderContent";
-import Countries from "./components/main/Countries";
+import Header from "./components/header/Header/components/Header.jsx";
 import { useState } from "react";
+import Main from "./components/main/Main/components/Main.jsx";
 
 function App() {
-  console.log(localStorage);
   const [selectedRegion, setSelectedRegion] = useState("");
   const [searchCountry, setSearchCountry] = useState("");
   return (
@@ -15,7 +14,9 @@ function App() {
         setSearchCountry={setSearchCountry}
         setSelectedRegion={setSelectedRegion}
       />
-      <Countries
+      <Main
+        setSelectedRegion={setSelectedRegion}
+        setSearchCountry={setSearchCountry}
         searchCountry={searchCountry}
         selectedRegion={selectedRegion}
       />

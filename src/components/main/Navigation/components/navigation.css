@@ -4,6 +4,7 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 5rem;
+  position: relative;
 }
 
 .country-navigation > input {
@@ -51,6 +52,18 @@
   box-shadow: none;
 }
 
+.clear-btn {
+  background-color: transparent;
+  position: absolute;
+  left: 38rem;
+  border: none;
+  cursor: pointer;
+  font-weight: 800;
+  font-size: 1.5rem;
+  padding: 1rem 0;
+  color: gray;
+}
+
 @media screen and (max-width: 41.125rem) {
   .country-navigation {
     flex-direction: column;
@@ -60,5 +73,11 @@
 
   .country-navigation {
     padding: 0 2rem;
+  }
+}
+
+@media screen and (max-width: 41.1875rem) {
+  .clear-btn {
+    left: 33rem;
   }
 }

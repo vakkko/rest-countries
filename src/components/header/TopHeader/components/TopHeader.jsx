@@ -17,20 +17,6 @@ export default function TopHeader() {
       document.body.classList.remove("dark-mode");
       localStorage.setItem("darkMode", "disabled");
     }
-
-    const topHeader = document.querySelector(".top-header");
-    const countryInformation = document.querySelectorAll(
-      ".country-information"
-    );
-    const countryInformationArr = Array.from(countryInformation);
-    const countryName = document.querySelectorAll(".country");
-    const countryNameArr = Array.from(countryName);
-    const countryNav = document.querySelector(".country-navigation > input");
-
-    topHeader.classList.toggle("dark-mode");
-    countryInformationArr.forEach((cntr) => cntr.classList.toggle("dark-mode"));
-    countryNameArr.forEach((cntr) => cntr.classList.toggle("dark-mode"));
-    countryNav.classList.toggle("dark-mode");
   }, [isDarkMode]);
 
   return (

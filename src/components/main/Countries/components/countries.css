@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   justify-items: center;
+  align-items: center;
   gap: 3rem;
 }
 
@@ -25,11 +26,14 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
-li a {
-  text-decoration: none;
+li button {
   font-family: "Nunito Sans", sans-serif;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
 }
 
 .footer-navigation ul li {
@@ -37,10 +41,6 @@ li a {
   padding: 1rem;
   border: 1px solid gray;
   cursor: pointer;
-}
-
-a {
-  color: white;
 }
 
 .footer-navigation ul li:hover,
@@ -62,5 +62,16 @@ a {
   .countries-container {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 34rem) {
+  .countries-container {
+    grid-template-columns: 1fr;
+  }
+
+  .countries-container img {
+    width: 330px;
+    height: 198px;
   }
 }

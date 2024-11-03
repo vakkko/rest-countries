@@ -1,7 +1,7 @@
 import useSWR from "swr";
 import "./countries.css";
 import { useState } from "react";
-import FetchCountries from "./FetchCountries";
+import FetchCountries from "./FetchCountries/components/FetchCountries";
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
@@ -38,16 +38,15 @@ const Countries = ({ selectedRegion, searchCountry }) => {
     setCurrentPage(id);
   }
 
-  if (selectedRegion) {
-  }
-
   const sortedCountries = countries
     ? countries
         .filter((country) =>
           selectedRegion
             ? selectedRegion === country.region
             : searchCountry
-            ? country.name.common.toLowerCase() === searchCountry.toLowerCase()
+            ? country.name.common
+                .toLowerCase()
+                .includes(searchCountry.toLowerCase())
             : true
         )
         .sort((a, b) => a.name.common.localeCompare(b.name.common))
@@ -62,33 +61,32 @@ const Countries = ({ selectedRegion, searchCountry }) => {
           <FetchCountries key={index} reg={country} i={index} />
         ))}
       </main>
-      <footer>
-        <nav className="footer-navigation">
-          <ul>
-            <li>
-              <a onClick={prePage} href="#">
-                Prev
-              </a>
-            </li>
 
-            {numbers.map((n) => (
-              <li
-                className={`onPage ${currentPage === n ? `active` : ``}`}
-                key={n}
-                onClick={() => changePage(n)}
-              >
-                <a href="#">{n}</a>
+      {sortedCountries.length > countryPerPage && (
+        <footer>
+          <nav className="footer-navigation">
+            <ul>
+              <li onClick={prePage}>
+                <button>Prev</button>
               </li>
-            ))}
 
-            <li>
-              <a onClick={nextPage} href="#">
-                Next
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </footer>
+              {numbers.map((n) => (
+                <li
+                  className={`onPage ${currentPage === n ? `active` : ``}`}
+                  key={n}
+                  onClick={() => changePage(n)}
+                >
+                  <button>{n}</button>
+                </li>
+              ))}
+
+              <li onClick={nextPage}>
+                <button>Next</button>
+              </li>
+            </ul>
+          </nav>
+        </footer>
+      )}
     </>
   );
 };
