@@ -1,12 +1,19 @@
 import useSWR from "swr";
 import "./countries.css";
-import { useState } from "react";
-import FetchCountries from "./FetchCountries/components/FetchCountries";
+import { useState, useEffect } from "react";
+import FetchCountries from "./components/FetchCountries/FetchCountries";
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
 const Countries = ({ selectedRegion, searchCountry }) => {
   const [currentPage, setCurrentPage] = useState(1);
+
+  useEffect(() => {
+    if (selectedRegion) {
+      setCurrentPage(1);
+    }
+  }, [selectedRegion]);
+
   const {
     data: countries,
     error,
@@ -19,8 +26,6 @@ const Countries = ({ selectedRegion, searchCountry }) => {
   const countryPerPage = 16;
   const lastIndex = currentPage * countryPerPage;
   const firstIndex = lastIndex - countryPerPage;
-  const npage = Math.ceil(countries.length / countryPerPage);
-  const numbers = [...Array(npage + 1).keys()].slice(1);
 
   function nextPage() {
     if (currentPage < npage) {
@@ -53,6 +58,8 @@ const Countries = ({ selectedRegion, searchCountry }) => {
     : [];
 
   const currentCountries = sortedCountries.slice(firstIndex, lastIndex);
+  const npage = Math.ceil(sortedCountries.length / countryPerPage);
+  const numbers = [...Array(npage + 1).keys()].slice(1);
 
   return (
     <>

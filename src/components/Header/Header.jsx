@@ -1,6 +1,7 @@
-import "./topHeader.css";
+import "./Header.css";
 import { useState, useEffect } from "react";
-export default function TopHeader() {
+
+export default function Header() {
   const [isDarkMode, setIsDarkMode] = useState(() => {
     return localStorage.getItem("darkMode") === "enabled";
   });

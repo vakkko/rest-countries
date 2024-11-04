@@ -1,19 +1,14 @@
 import "./App.css";
-import Header from "./components/header/Header/components/Header.jsx";
 import { useState } from "react";
-import Main from "./components/main/Main/components/Main.jsx";
+import Header from "./components/Header/Header.jsx";
+import Main from "./components/Main/Main.jsx";
 
 function App() {
   const [selectedRegion, setSelectedRegion] = useState("");
   const [searchCountry, setSearchCountry] = useState("");
   return (
     <>
-      <Header
-        selectedRegion={selectedRegion}
-        searchCountry={searchCountry}
-        setSearchCountry={setSearchCountry}
-        setSelectedRegion={setSelectedRegion}
-      />
+      <Header />
       <Main
         setSelectedRegion={setSelectedRegion}
         setSearchCountry={setSearchCountry}
