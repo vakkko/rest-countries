@@ -1,7 +1,7 @@
 import useSWR from "swr";
 import "./countries.css";
 import { useState, useEffect } from "react";
-import FetchCountries from "./components/FetchCountries/FetchCountries";
+import Details from "./Details/Details";
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
@@ -65,7 +65,7 @@ const Countries = ({ selectedRegion, searchCountry }) => {
     <>
       <main className="countries-container">
         {currentCountries.map((country, index) => (
-          <FetchCountries key={index} reg={country} i={index} />
+          <Details key={index} reg={country} i={index} />
         ))}
       </main>
 

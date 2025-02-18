@@ -1,4 +1,4 @@
-import "./fetchCountries.css";
+import "./details.css";
 
 export default function FetchCountries({ reg, i }) {
   return (

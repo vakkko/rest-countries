@@ -1,7 +1,5 @@
-// import Countries from "./Countries/components/Countries";
-// import Navigation from "./Navigation/Navigation";
-import Countries from "./components/Countries/Countries";
-import Navigation from "./components/Navigation/Navigation";
+import Countries from "./Countries/Countries.jsx";
+import Navigation from "./Navigation/Navigation";
 
 export default function Main({
   searchCountry,
