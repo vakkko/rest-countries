@@ -24,10 +24,13 @@
   margin-bottom: 1.6rem;
 }
 
-.info {
-  font-size: 1.4rem;
-  font-weight: 600;
+.country-information ul li {
   line-height: 1.6rem;
+  font-size: 1.4rem;
+}
+
+.info {
+  font-weight: 600;
 }
 
 .dark-mode .country-information {

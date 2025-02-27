@@ -27,3 +27,92 @@
 .back > img {
   width: 1.3rem;
 }
+
+.country-page {
+  margin-left: 8rem;
+}
+
+.flag-container {
+  display: flex;
+  align-items: center;
+  gap: 12rem;
+}
+
+.flag-container > img {
+  width: 56rem;
+  height: 40rem;
+}
+
+.flag-container > div > h2 {
+  margin-bottom: 2.3rem;
+  font-weight: 800;
+  font-size: 3.2rem;
+  line-height: 4.365rem;
+}
+
+.country-info-list {
+  display: flex;
+  gap: 14.1rem;
+}
+
+.country-info-list li {
+  font-size: 1.6rem;
+  line-height: 3.2rem;
+}
+
+.description {
+  font-weight: 600;
+}
+
+.border-countries {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 7rem;
+}
+
+.border-countries > h2 {
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  font-weight: 600;
+}
+
+.border-countries > div {
+  display: flex;
+  gap: 1rem;
+}
+
+.border-countries p {
+  margin-right: 1rem;
+  font-weight: 300;
+  font-size: 1.4rem;
+  line-height: 1.91rem;
+  width: 9.6rem;
+  box-shadow: 0px 0px 4px 1px #0000001b;
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 4px;
+}
+
+.dark-mode .back {
+  background-color: #2b3844;
+  color: white;
+}
+
+.dark-mode .back-container svg {
+  fill: white;
+}
+
+.dark-mode .border-countries p {
+  background-color: #2b3844;
+  color: white;
+}
+
+.dark-mode .flag-container {
+  color: white;
+}
+
+.dark-mode .border-countries h2,
+.dark-mode .flag-container > div > h2 {
+  color: white;
+}

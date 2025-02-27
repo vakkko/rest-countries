@@ -9,7 +9,7 @@
 
 .country-navigation > input {
   border: none;
-  padding: 1.2rem 14rem 1.2rem 1.2rem;
+  padding: 1.5rem 16rem 1.5rem 2rem;
   font-family: "Nunito Sans", sans-serif;
   font-size: 18px;
   font-weight: 400;
@@ -31,6 +31,7 @@
   line-height: 2rem;
   position: absolute;
   padding: 2rem 9rem 2rem 1.5rem;
+  border-radius: 10px;
 }
 
 .filter {
@@ -38,17 +39,13 @@
   line-height: 2rem;
   color: #111517;
   background-color: white;
-  padding: 1rem 4rem 1rem 2rem;
+  padding: 1.5rem 4rem 1.5rem 2rem;
   cursor: pointer;
   border-radius: 10px;
 }
 
 .region.active {
   font-weight: 800;
-}
-
-.dark-mode .country-navigation > input {
-  box-shadow: none;
 }
 
 .clear-btn {
@@ -61,6 +58,21 @@
   font-size: 1.5rem;
   padding: 1rem 0;
   color: gray;
+}
+
+.dark-mode .country-navigation > input,
+.dark-mode .filter,
+.dark-mode .regions {
+  background-color: #2b3844;
+  color: white;
+}
+
+.dark-mode .country-navigation > input::placeholder {
+  color: white;
+}
+
+.dark-mode .clear-btn {
+  color: white;
 }
 
 @media screen and (max-width: 41.125rem) {
