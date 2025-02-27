@@ -1,20 +1,18 @@
-import "./App.css";
-import { useState } from "react";
+import { useEffect } from "react";
 import Header from "./components/Header/Header.jsx";
-import Main from "./components/Main/Main.jsx";
+import { Outlet } from "react-router";
+import { useLocation } from "react-router";
 
 function App() {
-  const [selectedRegion, setSelectedRegion] = useState("");
-  const [searchCountry, setSearchCountry] = useState("");
+  const location = useLocation();
+  useEffect(() => {
+    document.body.style.backgroundColor =
+      location.pathname === "/" ? "hsl(0, 0%, 98%)" : "white";
+  }, [location.pathname]);
   return (
     <>
       <Header />
-      <Main
-        setSelectedRegion={setSelectedRegion}
-        setSearchCountry={setSearchCountry}
-        searchCountry={searchCountry}
-        selectedRegion={selectedRegion}
-      />
+      <Outlet />
     </>
   );
 }

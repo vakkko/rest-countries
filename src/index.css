@@ -12,9 +12,16 @@ html {
 
 body {
   font-family: "Nunito Sans", sans-serif;
-  background-color: hsl(0, 0%, 98%);
 }
 
 body.dark-mode {
-  background-color: hsl(207, 26%, 17%);
+  background-color: hsl(207, 26%, 17%) !important;
+}
+
+a {
+  all: unset;
+}
+
+li {
+  list-style-type: none;
 }

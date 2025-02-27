@@ -1,11 +1,11 @@
 import useSWR from "swr";
-import "./countries.css";
+import "./countriesContainer.css";
 import { useState, useEffect } from "react";
-import Details from "./Details/Details";
+import Country from "./Details/country";
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
-const Countries = ({ selectedRegion, searchCountry }) => {
+const CountriesContaiener = ({ selectedRegion, searchCountry }) => {
   const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
@@ -65,7 +65,7 @@ const Countries = ({ selectedRegion, searchCountry }) => {
     <>
       <main className="countries-container">
         {currentCountries.map((country, index) => (
-          <Details key={index} reg={country} i={index} />
+          <Country key={index} country={country} i={index} />
         ))}
       </main>
 
@@ -98,4 +98,4 @@ const Countries = ({ selectedRegion, searchCountry }) => {
   );
 };
 
-export default Countries;
+export default CountriesContaiener;
