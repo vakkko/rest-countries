@@ -34,14 +34,23 @@
   border-radius: 10px;
 }
 
+.filter-container {
+  position: relative;
+  padding: 1.5rem 2rem 1.5rem 2rem;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
 .filter {
   font-size: 1.4rem;
   line-height: 2rem;
   color: #111517;
-  background-color: white;
-  padding: 1.5rem 4rem 1.5rem 2rem;
+  background-color: transparent;
   cursor: pointer;
-  border-radius: 10px;
 }
 
 .region.active {
@@ -61,18 +70,20 @@
 }
 
 .dark-mode .country-navigation > input,
-.dark-mode .filter,
+.dark-mode .filter-container,
 .dark-mode .regions {
   background-color: #2b3844;
   color: white;
 }
 
-.dark-mode .country-navigation > input::placeholder {
+.dark-mode .country-navigation > input::placeholder,
+.dark-mode .clear-btn,
+.dark-mode .filter {
   color: white;
 }
 
-.dark-mode .clear-btn {
-  color: white;
+.dark-mode .filter-container svg {
+  fill: white;
 }
 
 @media screen and (max-width: 41.125rem) {
