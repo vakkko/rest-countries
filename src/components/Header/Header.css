@@ -24,6 +24,9 @@ h1 {
   background-color: transparent;
   cursor: pointer;
   font-family: "Nunito Sans", sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
 }
 
 .dark-mode .top-header {
@@ -34,4 +37,35 @@ h1 {
 .dark-mode .top-header h1,
 .dark-mode .top-header button {
   color: white;
+}
+
+@keyframes disapear {
+  from {
+    opacity: 1;
+    visibility: visible;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.hide-moon,
+.appear-sun {
+  animation: disapear 0.2s ease-in-out forwards;
+}
+
+@keyframes showMoon {
+  from {
+    opacity: 0;
+    visibility: hidden;
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+.appear-moon,
+.hide-sun {
+  animation: showMoon 0.2s ease-in-out forwards;
 }
