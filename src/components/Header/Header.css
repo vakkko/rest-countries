@@ -39,20 +39,9 @@ h1 {
   color: white;
 }
 
-@keyframes disapear {
-  from {
-    opacity: 1;
-    visibility: visible;
-  }
-  to {
-    opacity: 0;
-    visibility: hidden;
-  }
-}
-
 .hide-moon,
-.appear-sun {
-  animation: disapear 0.2s ease-in-out forwards;
+.hide-sun {
+  display: none;
 }
 
 @keyframes showMoon {
@@ -66,6 +55,6 @@ h1 {
   }
 }
 .appear-moon,
-.hide-sun {
-  animation: showMoon 0.2s ease-in-out forwards;
+.appear-sun {
+  animation: showMoon 0.2s ease-in-out;
 }
