@@ -6,6 +6,7 @@ import App from "./App";
 import { BrowserRouter, Routes, Route } from "react-router";
 import HomePage from "./pages/HomePage";
 import CountryPage from "./pages/CountryPage/CountryPage";
+import CountriesContaiener from "./components/CountriesContainer/CountriesContainer";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -14,7 +15,8 @@ root.render(
       <Routes>
         <Route path="/" element={<App />}>
           <Route index element={<HomePage />} />
-          <Route path=":country" element={<CountryPage />} />
+          <Route path=":page" element={<CountriesContaiener />} />
+          <Route path=":page/:country" element={<CountryPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

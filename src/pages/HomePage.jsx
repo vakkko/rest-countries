@@ -1,5 +1,5 @@
 import Navigation from "../components/Navigation/Navigation";
-import CountriesContaiener from "../components/Countries/CountriesContainer";
+import CountriesContaiener from "../components/CountriesContainer/CountriesContainer";
 import { useState } from "react";
 
 export default function HomePage() {

@@ -1,10 +1,10 @@
 import "./country.css";
 import { Link } from "react-router";
 
-export default function Country({ country, i }) {
+export default function Country({ country, page }) {
   return (
-    <div key={i}>
-      <Link to={country.name.common} state={country}>
+    <div>
+      <Link to={`/${page}/${country.name.common}`} state={country}>
         <img src={country.flags.png} alt="flag" />
         <div className="country-information">
           <p className="country">{country.name.common}</p>

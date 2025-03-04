@@ -1,18 +1,16 @@
 .back-container {
   background-color: hsl(0, 0%, 98%);
   width: 13.6rem;
-  display: flex;
-  justify-content: center;
   margin-bottom: 8rem;
 }
 
 .back-container > div {
-  width: 100%;
-  border-radius: 6px;
-  background-color: white;
 }
 
-.back {
+.btn-back {
+  width: 100%;
+  border-radius: 6px;
+  text-align: center;
   font-weight: 300;
   font-size: 1.6rem;
   line-height: 2rem;
@@ -22,9 +20,10 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+  background-color: white;
 }
 
-.back > img {
+.btn-back > img {
   width: 1.3rem;
 }
 
@@ -94,9 +93,18 @@
   padding-bottom: 4px;
 }
 
-.dark-mode .back {
+.dark-mode .btn-back {
   background-color: #2b3844;
   color: white;
+}
+
+.dark-mode .back-container {
+  border-radius: 6px;
+  background-color: #2b3844;
+}
+
+.dark-mode .back-container > div {
+  background-color: #2b3844;
 }
 
 .dark-mode .back-container svg {
