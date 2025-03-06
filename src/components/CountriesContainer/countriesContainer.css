@@ -18,40 +18,41 @@ main > div {
   height: 55%;
 }
 
-.footer-navigation ul li {
-  font-size: 1.4rem;
-  font-weight: 300;
-  line-height: 1.6rem;
-}
-
 footer {
   margin: 5rem auto;
 }
 
-.footer-navigation ul {
+footer nav {
+  font-size: 1.4rem;
+  font-weight: 300;
+  line-height: 1.6rem;
   display: flex;
-  align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
-li button {
-  font-family: "Nunito Sans", sans-serif;
-  border: none;
-  background-color: transparent;
+footer nav a {
   cursor: pointer;
+  padding: 0.5rem 0.9rem;
+  border-radius: 5px;
+  font-weight: 600;
 }
 
-.footer-navigation ul li {
-  background-color: skyblue;
-  padding: 1rem;
-  border: 1px solid gray;
-  cursor: pointer;
+footer nav a:hover {
+  color: #23adade1;
 }
 
-.footer-navigation ul li:hover,
-.footer-navigation ul li:active {
-  background-color: rgb(99, 151, 172);
+footer nav a.active {
+  background-color: #23adade1;
+  color: white;
+}
+
+.dark-mode footer nav a {
+  color: white;
+}
+
+.dark-mode footer nav a.active {
+  background-color: rgb(77, 42, 84);
 }
 
 .onPage.active {

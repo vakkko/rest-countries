@@ -8,6 +8,7 @@ const CountriesContaiener = ({ selectedRegion, searchCountry }) => {
   const [countries, setCountries] = useState();
   const [sortedCountries, setSortedCountries] = useState([]);
   const [page, setPage] = useState(0);
+
   const location = useLocation();
   const params = useParams();
   const currentPage = params.page;
@@ -33,6 +34,13 @@ const CountriesContaiener = ({ selectedRegion, searchCountry }) => {
     });
   }, [location.pathname, currentPage]);
 
+  useEffect(() => {
+    setTimeout(() => {
+      const element = document.querySelectorAll("nav > a");
+      element[0].classList.add("active");
+    }, 500);
+  }, []);
+
   if (!countries) return null;
   const pages = [];
   for (let i = 1; i <= page; i++) {
@@ -51,13 +59,13 @@ const CountriesContaiener = ({ selectedRegion, searchCountry }) => {
         ))}
       </main>
       <footer>
-        <ul>
+        <nav>
           {pages.map((page, index) => (
             <NavLink to={`/${page}`} key={index}>
               {page}
             </NavLink>
           ))}
-        </ul>
+        </nav>
       </footer>
     </div>
   );
