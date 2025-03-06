@@ -1,7 +1,7 @@
-import "./country.css";
+import "./info.css";
 import { Link } from "react-router";
 
-export default function Country({ country, page }) {
+export default function Info({ country, page }) {
   return (
     <div>
       <Link to={`/${page}/${country.name.common}`} state={country}>

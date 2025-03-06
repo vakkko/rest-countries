@@ -1,6 +1,6 @@
 import "./countriesContainer.css";
 import { useState, useEffect } from "react";
-import Country from "./Details/country";
+import Info from "./Info/Info";
 import axios from "axios";
 import { NavLink, useLocation, useParams } from "react-router";
 
@@ -11,7 +11,6 @@ const CountriesContaiener = ({ selectedRegion, searchCountry }) => {
   const location = useLocation();
   const params = useParams();
   const currentPage = params.page;
-  console.log(params);
 
   useEffect(() => {
     axios.get("https://restcountries.com/v3.1/all").then((resp) => {
@@ -44,7 +43,7 @@ const CountriesContaiener = ({ selectedRegion, searchCountry }) => {
     <div>
       <main className="countries-container">
         {sortedCountries.map((country, index) => (
-          <Country
+          <Info
             key={index}
             country={country}
             page={params.page ? params.page : 1}

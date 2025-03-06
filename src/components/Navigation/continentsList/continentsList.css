@@ -1,0 +1,23 @@
+.regions {
+  list-style-type: none;
+  cursor: pointer;
+  background-color: white;
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 14px;
+  line-height: 2rem;
+  position: absolute;
+  padding: 2rem 9rem 2rem 1.5rem;
+  border-radius: 10px;
+}
+
+.region.active {
+  font-weight: 800;
+}
+
+.dark-mode .regions {
+  background-color: #2b3844;
+  color: white;
+}

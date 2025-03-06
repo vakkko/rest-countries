@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./navigation.css";
+import ContinentsList from "./continentsList/ContinentsList";
 
 export default function Navigation({
   setSelectedRegion,
@@ -8,11 +9,6 @@ export default function Navigation({
   selectedRegion,
 }) {
   const [showContinents, setShowContinents] = useState(false);
-
-  const handleRegionClick = (region) => {
-    setSelectedRegion(region);
-    setShowContinents(!showContinents);
-  };
 
   const handleInputChange = (event) => {
     setSearchCountry(event.target.value);
@@ -54,57 +50,12 @@ export default function Navigation({
               />
             </svg>
           </div>
-
-          {showContinents && (
-            <ul className="regions">
-              <li
-                className={`region ${
-                  selectedRegion === `Africa` ? `active` : ``
-                }`}
-                onClick={() => handleRegionClick("Africa")}
-              >
-                Africa
-              </li>
-              <li
-                className={`region ${
-                  selectedRegion === `Americas` ? `active` : ``
-                }`}
-                onClick={() => handleRegionClick("Americas")}
-              >
-                Americas
-              </li>
-              <li
-                className={`region ${
-                  selectedRegion === `Asia` ? `active` : ``
-                }`}
-                onClick={() => handleRegionClick("Asia")}
-              >
-                Asia
-              </li>
-              <li
-                className={`region ${
-                  selectedRegion === `Europe` ? `active` : ``
-                }`}
-                onClick={() => handleRegionClick("Europe")}
-              >
-                Europe
-              </li>
-              <li
-                className={`region ${
-                  selectedRegion === `Oceania` ? `active` : ``
-                }`}
-                onClick={() => handleRegionClick("Oceania")}
-              >
-                Oceania
-              </li>
-              <li
-                className={`region ${selectedRegion === `` ? `active` : ``}`}
-                onClick={() => handleRegionClick("")}
-              >
-                All
-              </li>
-            </ul>
-          )}
+          <ContinentsList
+            setSelectedRegion={setSelectedRegion}
+            setShowContinents={setShowContinents}
+            showContinents={showContinents}
+            selectedRegion={selectedRegion}
+          />
         </div>
       </nav>
     </>

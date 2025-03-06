@@ -8,7 +8,7 @@
   margin-top: -0.5rem;
 }
 
-.country ul {
+.country-information ul {
   list-style-type: none;
   display: flex;
   flex-direction: column;
