@@ -2,31 +2,14 @@ import { useState } from "react";
 import "./navigation.css";
 import ContinentsList from "./continentsList/ContinentsList";
 
-export default function Navigation({
-  setSelectedRegion,
-  searchCountry,
-  setSearchCountry,
-  selectedRegion,
-}) {
+export default function Navigation() {
   const [showContinents, setShowContinents] = useState(false);
-
-  const handleInputChange = (event) => {
-    setSearchCountry(event.target.value);
-  };
 
   return (
     <>
       <nav className="country-navigation">
-        <input
-          onChange={handleInputChange}
-          type="text"
-          value={searchCountry}
-          placeholder="Search for a country…"
-        />
-        <button onClick={() => setSearchCountry("")} className="clear-btn">
-          clear
-        </button>
-
+        <input type="text" placeholder="Search for a country…" />
+        <button className="clear-btn">clear</button>
         <div>
           <div
             onClick={() => setShowContinents(!showContinents)}
@@ -51,10 +34,8 @@ export default function Navigation({
             </svg>
           </div>
           <ContinentsList
-            setSelectedRegion={setSelectedRegion}
             setShowContinents={setShowContinents}
             showContinents={showContinents}
-            selectedRegion={selectedRegion}
           />
         </div>
       </nav>

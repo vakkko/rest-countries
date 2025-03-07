@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import Header from "./components/Header/Header.jsx";
 import { Outlet } from "react-router";
 import { useLocation } from "react-router";
+import Navigation from "./components/Navigation/Navigation.jsx";
 
 function App() {
   const location = useLocation();
@@ -13,6 +14,7 @@ function App() {
   return (
     <>
       <Header />
+      <Navigation />
       <Outlet />
     </>
   );

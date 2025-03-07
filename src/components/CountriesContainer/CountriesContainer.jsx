@@ -4,7 +4,7 @@ import Info from "./Info/Info";
 import axios from "axios";
 import { NavLink, useLocation, useParams } from "react-router";
 
-const CountriesContaiener = ({ selectedRegion, searchCountry }) => {
+const CountriesContaiener = () => {
   const [countries, setCountries] = useState();
   const [sortedCountries, setSortedCountries] = useState([]);
   const [page, setPage] = useState(0);
@@ -18,11 +18,19 @@ const CountriesContaiener = ({ selectedRegion, searchCountry }) => {
       const sortedData = resp.data.sort((a, b) =>
         a.name.common.localeCompare(b.name.common)
       );
+
       setCountries(sortedData);
+
       const pageNumber = Math.ceil(sortedData.length / 16);
       setPage(pageNumber);
+
       if (location.pathname === "/") {
         setSortedCountries(sortedData.slice(0, 16));
+        window.scrollTo(0, 0);
+        setTimeout(() => {
+          const element = document.querySelectorAll("nav > a");
+          element[0].classList.add("active");
+        }, 500);
       } else if (1 < currentPage < pageNumber) {
         setSortedCountries(
           sortedData.slice(
@@ -30,16 +38,17 @@ const CountriesContaiener = ({ selectedRegion, searchCountry }) => {
             currentPage * pageNumber
           )
         );
+        window.scrollTo(0, 0);
+
+        if (location.pathname !== "/1") {
+          setTimeout(() => {
+            const element = document.querySelectorAll("nav > a");
+            element[0].classList.remove("active");
+          }, 500);
+        }
       }
     });
   }, [location.pathname, currentPage]);
-
-  useEffect(() => {
-    setTimeout(() => {
-      const element = document.querySelectorAll("nav > a");
-      element[0].classList.add("active");
-    }, 500);
-  }, []);
 
   if (!countries) return null;
   const pages = [];
