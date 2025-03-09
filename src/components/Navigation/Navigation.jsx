@@ -1,15 +1,30 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import "./navigation.css";
 import ContinentsList from "./continentsList/ContinentsList";
+import { SearchContext } from "../../context/context";
 
 export default function Navigation() {
   const [showContinents, setShowContinents] = useState(false);
 
+  const search = useContext(SearchContext);
+  const { searchValue, setSearchValue } = search;
+
+  const handleChange = (e) => {
+    setSearchValue(e.target.value);
+  };
+
   return (
     <>
       <nav className="country-navigation">
-        <input type="text" placeholder="Search for a country…" />
-        <button className="clear-btn">clear</button>
+        <input
+          type="text"
+          placeholder="Search for a country…"
+          value={searchValue}
+          onChange={handleChange}
+        />
+        <button onClick={() => setSearchValue("")} className="clear-btn">
+          clear
+        </button>
         <div>
           <div
             onClick={() => setShowContinents(!showContinents)}

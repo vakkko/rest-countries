@@ -1,8 +1,9 @@
 import "./countriesContainer.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import Info from "./Info/Info";
 import axios from "axios";
 import { NavLink, useLocation, useParams } from "react-router";
+import { SearchContext } from "../../context/context";
 
 const CountriesContaiener = () => {
   const [countries, setCountries] = useState();
@@ -12,6 +13,9 @@ const CountriesContaiener = () => {
   const location = useLocation();
   const params = useParams();
   const currentPage = params.page;
+
+  const search = useContext(SearchContext);
+  const { searchValue } = search;
 
   useEffect(() => {
     axios.get("https://restcountries.com/v3.1/all").then((resp) => {
@@ -38,17 +42,36 @@ const CountriesContaiener = () => {
             currentPage * pageNumber
           )
         );
-        window.scrollTo(0, 0);
+      }
 
-        if (location.pathname !== "/1") {
-          setTimeout(() => {
-            const element = document.querySelectorAll("nav > a");
-            element[0].classList.remove("active");
-          }, 500);
-        }
+      window.scrollTo(0, 0);
+
+      if (searchValue) {
+        const sortedSearch = sortedData.filter((country) => {
+          return country.name.common
+            .toLowerCase()
+            .includes(searchValue.toLowerCase());
+        });
+
+        const searchPages = Math.ceil(sortedSearch.length / 16);
+        setPage(searchPages);
+
+        setSortedCountries(
+          sortedSearch.slice(
+            (currentPage - 1) * pageNumber,
+            currentPage * pageNumber
+          )
+        );
+      }
+
+      if (location.pathname !== "/1") {
+        setTimeout(() => {
+          const element = document.querySelectorAll("nav > a");
+          element[0].classList.remove("active");
+        }, 500);
       }
     });
-  }, [location.pathname, currentPage]);
+  }, [location.pathname, currentPage, searchValue]);
 
   if (!countries) return null;
   const pages = [];
