@@ -8,11 +8,11 @@ export default function Navigation() {
   const [showContinents, setShowContinents] = useState(false);
 
   const search = useContext(SearchContext);
-  const { searchValue, setSearchValue } = search;
+  const { searchCountry, setSearchCountry } = search;
   const params = useParams();
 
   const handleChange = (e) => {
-    setSearchValue(e.target.value);
+    setSearchCountry(e.target.value);
   };
 
   return (
@@ -22,10 +22,10 @@ export default function Navigation() {
           <input
             type="text"
             placeholder="Search for a country…"
-            value={searchValue}
+            value={searchCountry}
             onChange={handleChange}
           />
-          <button onClick={() => setSearchValue("")} className="clear-btn">
+          <button onClick={() => setSearchCountry("")} className="clear-btn">
             clear
           </button>
           <div>

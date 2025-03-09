@@ -15,7 +15,8 @@ const CountriesContaiener = () => {
   const currentPage = params.page;
 
   const search = useContext(SearchContext);
-  const { searchValue } = search;
+  const { searchCountry } = search;
+  const searchRegion = search.searchRegion;
 
   useEffect(() => {
     axios.get("https://restcountries.com/v3.1/all").then((resp) => {
@@ -30,7 +31,6 @@ const CountriesContaiener = () => {
 
       if (location.pathname === "/") {
         setSortedCountries(sortedData.slice(0, 16));
-        window.scrollTo(0, 0);
         setTimeout(() => {
           const element = document.querySelectorAll("nav > a");
           element[0].classList.add("active");
@@ -46,11 +46,11 @@ const CountriesContaiener = () => {
 
       window.scrollTo(0, 0);
 
-      if (searchValue) {
+      if (searchCountry) {
         const sortedSearch = sortedData.filter((country) => {
           return country.name.common
             .toLowerCase()
-            .includes(searchValue.toLowerCase());
+            .includes(searchCountry.toLowerCase());
         });
 
         const searchPages = Math.ceil(sortedSearch.length / 16);
@@ -64,6 +64,22 @@ const CountriesContaiener = () => {
         );
       }
 
+      if (searchRegion) {
+        const regionSearch = sortedData.filter((country) => {
+          return country.region === searchRegion;
+        });
+
+        const regionPages = Math.ceil(regionSearch.length / 16);
+        setPage(regionPages);
+
+        setSortedCountries(
+          regionSearch.slice(
+            (currentPage - 1) * pageNumber,
+            currentPage * pageNumber
+          )
+        );
+      }
+
       if (location.pathname !== "/1") {
         setTimeout(() => {
           const element = document.querySelectorAll("nav > a");
@@ -71,7 +87,7 @@ const CountriesContaiener = () => {
         }, 500);
       }
     });
-  }, [location.pathname, currentPage, searchValue]);
+  }, [location.pathname, currentPage, searchCountry, searchRegion]);
 
   if (!countries) return null;
   const pages = [];
