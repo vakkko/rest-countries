@@ -19,37 +19,37 @@ export default function ContinentsList({ showContinents, setShowContinents }) {
           className={`region ${searchRegion === "Africa" ? "active" : ""} `}
           onClick={() => handleRegionClick("Africa")}
         >
-          <Link to={"1"}>Africa</Link>
+          <Link to={"/"}>Africa</Link>
         </li>
         <li
           className={`region ${searchRegion === "Americas" ? "active" : ""}  `}
           onClick={() => handleRegionClick("Americas")}
         >
-          <Link to={"1"}>Americas</Link>
+          <Link to={"/"}>Americas</Link>
         </li>
         <li
           className={`region ${searchRegion === "Asia" ? "active" : ""} `}
           onClick={() => handleRegionClick("Asia")}
         >
-          <Link to={"1"}>Asia</Link>
+          <Link to={"/"}>Asia</Link>
         </li>
         <li
           className={`region ${searchRegion === "Europe" ? "active" : ""} `}
           onClick={() => handleRegionClick("Europe")}
         >
-          <Link to={"1"}>Europe</Link>
+          <Link to={"/"}>Europe</Link>
         </li>
         <li
           className={`region ${searchRegion === "Oceania" ? "active" : ""} `}
           onClick={() => handleRegionClick("Oceania")}
         >
-          <Link to={"1"}>Oceania</Link>
+          <Link to={"/"}>Oceania</Link>
         </li>
         <li
           className={`region ${searchRegion === "" ? "active" : ""} `}
           onClick={() => handleRegionClick("")}
         >
-          All
+          <Link to={"/"}>All </Link>
         </li>
       </ul>
     )
