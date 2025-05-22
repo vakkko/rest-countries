@@ -1,70 +1,64 @@
-# Getting Started with Create React App
+# 🌍 Rest Countries
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is my personal project built as part of the **Frontend Mentor** challenge. The goal was to create a web page that displays country flags, where you can **search for a country** and **view important details about each one**. This project showcases my skills in building clean, reusable, and responsive web interfaces using React and modern development tools.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Features
 
-### `npm start`
+- 🇺🇳 Display countries in alphabetical order
+- 🌎 Filter countries by region
+- 🔍 Search for a specific country
+- 🧩 Reusable components and organized structure
+- 📄 Multiple pages with routing
+- 📄 Paginated country list for better performance and user experience
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🛠️ Tech Stack
 
-### `npm test`
+- **React** – for building the user interface
+- **React Router** – for handling client-side routing
+- **Axios** – for fetching data from the API
+- **useContext** – for managing global state
+- **Local Storage** – to persist the theme (light/dark mode)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 🧠 What I Learned
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Working on this project improved my understanding of:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Component-based architecture in React
+- State management using `useContext`
+- Routing and navigation in single-page applications
+- Storing and retrieving data with Local Storage
+- Implementing pagination for large datasets
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 📸 Screenshots
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 🌍 All Countries (Homepage)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![Homepage](../../screenshots/homepage.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 🔍 Search in Action
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+![Search by Country](../../screenshots/search.png)
+![Search by Continent](../../screenshots/filtered.png)
 
-## Learn More
+### 📄 Country Detail Page
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![Detail Page](../../screenshots/country.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 🌗 Dark Mode
 
-### Code Splitting
+![Dark Mode](../../screenshots/homepage-dark.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+## 👤 Author
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Vladimer Gabisonia**
+GitHub: [vakkko](https://github.com/vakkko)
