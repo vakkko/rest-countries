@@ -41,20 +41,20 @@ Working on this project improved my understanding of:
 
 ### 🌍 All Countries (Homepage)
 
-![Homepage](../../screenshots/homepage.png)
+![Homepage](./screenshots/homepage.png)
 
 ### 🔍 Search in Action
 
-![Search by Country](../../screenshots/search.png)
-![Search by Continent](../../screenshots/filtered.png)
+![Search by Country](./screenshots/search.png)
+![Search by Continent](./screenshots/filtered.png)
 
 ### 📄 Country Detail Page
 
-![Detail Page](../../screenshots/country.png)
+![Detail Page](./screenshots/country.png)
 
 ### 🌗 Dark Mode
 
-![Dark Mode](../../screenshots/homepage-dark.png)
+![Dark Mode](./screenshots/homepage-dark.png)
 
 ---
 
