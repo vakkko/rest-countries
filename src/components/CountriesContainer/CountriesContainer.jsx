@@ -19,74 +19,78 @@ const CountriesContaiener = () => {
   const searchRegion = search.searchRegion;
 
   useEffect(() => {
-    axios.get("https://restcountries.com/v3.1/all").then((resp) => {
-      const sortedData = resp.data.sort((a, b) =>
-        a.name.common.localeCompare(b.name.common)
-      );
-
-      setCountries(sortedData);
-
-      const pageNumber = Math.ceil(sortedData.length / 16);
-      setPage(pageNumber);
-
-      if (location.pathname === "/") {
-        setSortedCountries(sortedData.slice(0, 16));
-        setTimeout(() => {
-          const element = document.querySelectorAll("nav > a");
-          element[0].classList.add("active");
-        }, 500);
-      } else if (1 < currentPage < pageNumber) {
-        setSortedCountries(
-          sortedData.slice(
-            (currentPage - 1) * pageNumber,
-            currentPage * pageNumber
-          )
+    axios
+      .get(
+        "https://restcountries.com/v3.1/all?fields=name,capital,region,population,flags"
+      )
+      .then((resp) => {
+        const sortedData = resp.data.sort((a, b) =>
+          a.name.common.localeCompare(b.name.common)
         );
-      }
 
-      window.scrollTo(0, 0);
+        setCountries(sortedData);
 
-      if (searchCountry) {
-        const sortedSearch = sortedData.filter((country) => {
-          return country.name.common
-            .toLowerCase()
-            .includes(searchCountry.toLowerCase());
-        });
+        const pageNumber = Math.ceil(sortedData.length / 16);
+        setPage(pageNumber);
 
-        const searchPages = Math.ceil(sortedSearch.length / 16);
-        setPage(searchPages);
+        if (location.pathname === "/") {
+          setSortedCountries(sortedData.slice(0, 16));
+          setTimeout(() => {
+            const element = document.querySelectorAll("nav > a");
+            element[0].classList.add("active");
+          }, 500);
+        } else if (1 < currentPage < pageNumber) {
+          setSortedCountries(
+            sortedData.slice(
+              (currentPage - 1) * pageNumber,
+              currentPage * pageNumber
+            )
+          );
+        }
 
-        setSortedCountries(
-          sortedSearch.slice(
-            (currentPage - 1) * pageNumber,
-            currentPage * pageNumber
-          )
-        );
-      }
+        window.scrollTo(0, 0);
 
-      if (searchRegion) {
-        const regionSearch = sortedData.filter((country) => {
-          return country.region === searchRegion;
-        });
+        if (searchCountry) {
+          const sortedSearch = sortedData.filter((country) => {
+            return country.name.common
+              .toLowerCase()
+              .includes(searchCountry.toLowerCase());
+          });
 
-        const regionPages = Math.ceil(regionSearch.length / 16);
-        setPage(regionPages);
+          const searchPages = Math.ceil(sortedSearch.length / 16);
+          setPage(searchPages);
 
-        setSortedCountries(
-          regionSearch.slice(
-            (currentPage - 1) * pageNumber,
-            currentPage * pageNumber
-          )
-        );
-      }
+          setSortedCountries(
+            sortedSearch.slice(
+              (currentPage - 1) * pageNumber,
+              currentPage * pageNumber
+            )
+          );
+        }
 
-      if (location.pathname !== "/1") {
-        setTimeout(() => {
-          const element = document.querySelectorAll("nav > a");
-          element[0].classList.remove("active");
-        }, 500);
-      }
-    });
+        if (searchRegion) {
+          const regionSearch = sortedData.filter((country) => {
+            return country.region === searchRegion;
+          });
+
+          const regionPages = Math.ceil(regionSearch.length / 16);
+          setPage(regionPages);
+
+          setSortedCountries(
+            regionSearch.slice(
+              (currentPage - 1) * pageNumber,
+              currentPage * pageNumber
+            )
+          );
+        }
+
+        if (location.pathname !== "/1") {
+          setTimeout(() => {
+            const element = document.querySelectorAll("nav > a");
+            element[0].classList.remove("active");
+          }, 500);
+        }
+      });
   }, [location.pathname, currentPage, searchCountry, searchRegion]);
 
   if (!countries) return null;
